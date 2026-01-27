@@ -1,37 +1,41 @@
 :root {
   /* Color Palette - Premium & Modern */
-  --primary: #0F766E; /* Teal 700 */
-  --primary-hover: #115E59; /* Teal 800 */
-  --primary-light: #CCFBF1; /* Teal 100 */
-  
-  --secondary: #6366F1; /* Indigo 500 */
-  
-  --bg-body: #F3F4F6; /* Cool Gray 100 */
-  --bg-surface: #FFFFFF;
-  --bg-sidebar: #FFFFFF;
+  --primary: #0f766e; /* Teal 700 */
+  --primary-hover: #115e59; /* Teal 800 */
+  --primary-light: #ccfbf1; /* Teal 100 */
+
+  --secondary: #6366f1; /* Indigo 500 */
+
+  --bg-body: #f3f4f6; /* Cool Gray 100 */
+  --bg-surface: #ffffff;
+  --bg-sidebar: #ffffff;
 
   --text-main: #111827; /* Gray 900 */
-  --text-muted: #6B7280; /* Gray 500 */
-  --text-light: #9CA3AF; /* Gray 400 */
+  --text-muted: #6b7280; /* Gray 500 */
+  --text-light: #9ca3af; /* Gray 400 */
 
-  --border-color: #E5E7EB; /* Gray 200 */
-  
-  --danger: #EF4444;
-  --warning: #F59E0B;
-  --success: #10B981;
+  --border-color: #e5e7eb; /* Gray 200 */
+
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --success: #10b981;
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-full: 9999px;
 
-  --font-family: 'Funnel Display', system-ui, -apple-system, sans-serif;
+  --font-family: "Funnel Display", system-ui, -apple-system, sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -148,11 +152,11 @@ button {
 }
 
 .btn-cancel {
-    background-color: #E5E7EB; 
-    color: #374151;
+  background-color: #e5e7eb;
+  color: #374151;
 }
-.btn-cancel:hover{
-    background-color: #D1D5DB;
+.btn-cancel:hover {
+  background-color: #d1d5db;
 }
 
 /* Main Content */
@@ -226,7 +230,9 @@ main {
   border: 1px solid var(--border-color);
   display: flex;
   gap: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   position: relative;
 }
 
@@ -291,17 +297,17 @@ main {
 }
 
 .badge.high {
-  background-color: #FEE2E2;
-  color: #B91C1C;
+  background-color: #fee2e2;
+  color: #b91c1c;
 }
 
 .badge.medium {
-  background-color: #FEF3C7;
-  color: #B45309;
+  background-color: #fef3c7;
+  color: #b45309;
 }
 
 .badge.low {
-  background-color: #D1FAE5;
+  background-color: #d1fae5;
   color: #047857;
 }
 
@@ -314,7 +320,7 @@ main {
   transition: opacity 0.2s;
   display: flex;
   gap: 0.5rem;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .task-card:hover .card-actions {
@@ -337,45 +343,45 @@ main {
 
 /* Form Styles */
 .form-group {
-    margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--text-main);
-    font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-main);
+  font-size: 0.95rem;
 }
 
 .form-group input[type="text"],
 .form-group input[type="date"],
 .form-group textarea,
 .form-group select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.15s;
-    background-color: #F9FAFB;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.15s;
+  background-color: #f9fafb;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    outline: none;
-    border-color: var(--primary);
-    background-color: #fff;
-    box-shadow: 0 0 0 3px var(--primary-light);
+  outline: none;
+  border-color: var(--primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px var(--primary-light);
 }
 
 .modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 /* Modal Styling (Base for the separate files) */

@@ -1,188 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Do Me</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Rounded">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Rounded"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="app-container">
-        <aside class="sidebar">
-            <div class="brand">
-                <h1>Do Me</h1>
-            </div>
-
-            <nav class="nav-links">
-                <div class="nav-item active" data-filter="all">
-                    <span class="material-icons-outlined">pending_actions</span>
-                    <span>All Tasks</span>
-                </div>
-                <div class="nav-item" data-filter="work">
-                    <span class="material-icons-outlined">work_outline</span>
-                    <span>Work</span>
-                </div>
-                <div class="nav-item" data-filter="personal">
-                    <span class="material-icons-outlined">person_outline</span>
-                    <span>Personal</span>
-                </div>
-                <div class="nav-item" data-filter="urgent">
-                    <span class="material-icons-outlined">priority_high</span>
-                    <span>Urgent</span>
-                </div>
-                <div class="nav-item" data-filter="others">
-                    <span class="material-icons-outlined">note_add</span>
-                    <span>Others</span>
-                </div>
-            </nav>
-
-            <div class="sidebar-footer">
-                <button type="button" class="btn-secondary" id="open-category-modal">
-                    <span class="material-icons-outlined">add</span> New Category
-                </button>
-            </div>
-        </aside>
-
-        <div class="main-content">
-            <header>
-                <div class="header-title">
-                    <span class="material-icons-outlined">pending_actions</span>
-                    <h2>All Tasks</h2>
-                </div>
-                <button class="btn-primary" id="open-add-task-modal">
-                    <span class="material-icons-outlined">add</span> Add Task
-                </button>
-            </header>
-
-            <main>
-                <div class="dashboard-overview">
-                    <div class="greeting">
-                        <h3>Your Productivity</h3>
-                        <p>5 Tasks Remaining</p>
-                    </div>
-                </div>
-
-                <div class="task-grid">
-                    <!-- Task Cards -->
-                    <div class="task-card">
-                        <div class="card-status">
-                            <span class="material-icons-outlined check-icon">check_box_outline_blank</span>
-                        </div>
-                        <div class="card-details">
-                            <h4 class="task-title">Finish UI Design Plan</h4>
-                            <div class="task-meta">
-                                <span class="date">
-                                    <span class="material-icons-outlined">calendar_today</span> Feb 15
-                                </span>
-                                <span class="badge high">High</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <span class="material-icons-outlined edit-icon">edit</span>
-                            <span class="material-icons-outlined delete-icon">delete</span>
-                        </div>
-                    </div>
-
-                    <div class="task-card">
-                        <div class="card-status">
-                            <span class="material-icons-outlined check-icon">check_box_outline_blank</span>
-                        </div>
-                        <div class="card-details">
-                            <h4 class="task-title">Review Project Docs</h4>
-                            <div class="task-meta">
-                                <span class="date">
-                                    <span class="material-icons-outlined">calendar_today</span> Feb 16
-                                </span>
-                                <span class="badge medium">Medium</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <span class="material-icons-outlined edit-icon">edit</span>
-                            <span class="material-icons-outlined delete-icon">delete</span>
-                        </div>
-                    </div>
-
-                    <div class="task-card">
-                        <div class="card-status">
-                            <span class="material-icons-outlined check-icon">check_circle</span>
-                        </div>
-                        <div class="card-details completed">
-                            <h4 class="task-title">Setup Environment</h4>
-                            <div class="task-meta">
-                                <span class="date">
-                                    <span class="material-icons-outlined">calendar_today</span> Feb 14
-                                </span>
-                                <span class="badge low">Low</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <span class="material-icons-outlined edit-icon">edit</span>
-                            <span class="material-icons-outlined delete-icon">delete</span>
-                        </div>
-                    </div>
-                </div>
-            </main>
+      <aside class="sidebar">
+        <div class="brand">
+          <h1>Do Me</h1>
         </div>
+
+        <nav class="nav-links">
+          <div class="nav-item active" data-filter="all">
+            <span class="material-icons-outlined">pending_actions</span>
+            <span>All Tasks</span>
+          </div>
+          <div class="nav-item" data-filter="work">
+            <span class="material-icons-outlined">work_outline</span>
+            <span>Work</span>
+          </div>
+          <div class="nav-item" data-filter="personal">
+            <span class="material-icons-outlined">person_outline</span>
+            <span>Personal</span>
+          </div>
+          <div class="nav-item" data-filter="urgent">
+            <span class="material-icons-outlined">priority_high</span>
+            <span>Urgent</span>
+          </div>
+          <div class="nav-item" data-filter="others">
+            <span class="material-icons-outlined">note_add</span>
+            <span>Others</span>
+          </div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button type="button" class="btn-secondary" id="open-category-modal">
+            <span class="material-icons-outlined">add</span> New Category
+          </button>
+        </div>
+      </aside>
+
+      <div class="main-content">
+        <header>
+          <div class="header-title">
+            <span class="material-icons-outlined">pending_actions</span>
+            <h2>All Tasks</h2>
+          </div>
+          <button class="btn-primary" id="open-add-task-modal">
+            <span class="material-icons-outlined">add</span> Add Task
+          </button>
+        </header>
+
+        <main>
+          <div class="dashboard-overview">
+            <div class="greeting">
+              <h3>Your Productivity</h3>
+              <p>5 Tasks Remaining</p>
+            </div>
+          </div>
+
+          <div class="task-grid">
+            <!-- Task Cards -->
+            <div class="task-card">
+              <div class="card-status">
+                <span class="material-icons-outlined check-icon"
+                  >check_box_outline_blank</span
+                >
+              </div>
+              <div class="card-details">
+                <h4 class="task-title">Finish UI Design Plan</h4>
+                <div class="task-meta">
+                  <span class="date">
+                    <span class="material-icons-outlined">calendar_today</span>
+                    Feb 15
+                  </span>
+                  <span class="badge high">High</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <span class="material-icons-outlined edit-icon">edit</span>
+                <span class="material-icons-outlined delete-icon">delete</span>
+              </div>
+            </div>
+
+            <div class="task-card">
+              <div class="card-status">
+                <span class="material-icons-outlined check-icon"
+                  >check_box_outline_blank</span
+                >
+              </div>
+              <div class="card-details">
+                <h4 class="task-title">Review Project Docs</h4>
+                <div class="task-meta">
+                  <span class="date">
+                    <span class="material-icons-outlined">calendar_today</span>
+                    Feb 16
+                  </span>
+                  <span class="badge medium">Medium</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <span class="material-icons-outlined edit-icon">edit</span>
+                <span class="material-icons-outlined delete-icon">delete</span>
+              </div>
+            </div>
+
+            <div class="task-card">
+              <div class="card-status">
+                <span class="material-icons-outlined check-icon"
+                  >check_circle</span
+                >
+              </div>
+              <div class="card-details completed">
+                <h4 class="task-title">Setup Environment</h4>
+                <div class="task-meta">
+                  <span class="date">
+                    <span class="material-icons-outlined">calendar_today</span>
+                    Feb 14
+                  </span>
+                  <span class="badge low">Low</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <span class="material-icons-outlined edit-icon">edit</span>
+                <span class="material-icons-outlined delete-icon">delete</span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
     <div class="modal-overlay" id="modal-add-task">
-        <div class="modal">
-            <div class="modal-header">
-                <h2>Add New Task</h2>
-                <button class="close-modal" id="close-add-task">
-                    <span class="material-icons-outlined">close</span>
-                </button>
-            </div>
-            <form id="add-task-form">
-                <div class="form-group">
-                    <label for="task-title">Title</label>
-                    <input type="text" id="task-title" name="title" placeholder="e.g., Buy groceries" required>
-                </div>
-    
-                <div class="form-group">
-                    <label for="task-desc">Description</label>
-                    <textarea id="task-desc" name="description" rows="3" placeholder="Add more details..."></textarea>
-                </div>
-    
-                <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div>
-                        <label for="task-date">Due Date</label>
-                        <input type="date" id="task-date" name="date" required>
-                    </div>
-                    <div>
-                        <label for="task-priority">Priority</label>
-                        <select id="task-priority" name="priority">
-                            <option value="low">Low</option>
-                            <option value="medium" selected>Medium</option>
-                            <option value="high">High</option>
-                        </select>
-                    </div>
-                </div>
-    
-                <div class="form-group">
-                    <label for="task-category">Category</label>
-                    <select id="task-category" name="category">
-                        <option value="work">Work</option>
-                        <option value="personal">Personal</option>
-                        <option value="others">Others</option>
-                    </select>
-                </div>
-    
-                <div class="modal-actions">
-                    <button type="button" class="btn-cancel" id="cancel-add-task">Cancel</button>
-                    <button type="submit" class="btn-primary">Create Task</button>
-                </div>
-            </form>
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Add New Task</h2>
+          <button class="close-modal" id="close-add-task">
+            <span class="material-icons-outlined">close</span>
+          </button>
         </div>
-    </div>
-</body>
+        <form id="add-task-form">
+          <div class="form-group">
+            <label for="task-title">Title</label>
+            <input
+              type="text"
+              id="task-title"
+              name="title"
+              placeholder="e.g., Buy groceries"
+              required
+            />
+          </div>
 
+          <div class="form-group">
+            <label for="task-desc">Description</label>
+            <textarea
+              id="task-desc"
+              name="description"
+              rows="3"
+              placeholder="Add more details..."
+            ></textarea>
+          </div>
+
+          <div
+            class="form-group"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
+          >
+            <div>
+              <label for="task-date">Due Date</label>
+              <input type="date" id="task-date" name="date" required />
+            </div>
+            <div>
+              <label for="task-priority">Priority</label>
+              <select id="task-priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="task-category">Category</label>
+            <select id="task-category" name="category">
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-cancel" id="cancel-add-task">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Create Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
