@@ -1,5 +1,6 @@
 import js from "@eslint/js";
 import globals from "globals";
+import prettier from "eslint-config-prettier";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
@@ -13,4 +14,5 @@ export default defineConfig([
       "no-undef": "warn",
     },
   },
+  prettier,
 ]);
