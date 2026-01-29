@@ -1,5 +1,3 @@
-import { Task } from "./task";
-
 function storageAvailable(type) {
   let storage;
   try {
@@ -12,39 +10,27 @@ function storageAvailable(type) {
     return (
       e instanceof DOMException &&
       e.name === "QuotaExceededError" &&
+      // acknowledge QuotaExceededError only if there's something already stored
       storage &&
       storage.length !== 0
     );
   }
 }
-const isStorageAvailable = storageAvailable(localStorage);
 
-function loadTasks() {
-  if (isStorageAvailable) {
-    if (localStorage.getItem("tasks")) {
-      const tasksData = JSON.parse(localStorage.getItem("tasks"));
-      Task.setTasks(tasksData);
-    } else {
-      const tasks = Task.getTasks();
-      localStorage.setItem("tasks", tasks);
-    }
+const isAvailable = storageAvailable("localStorage");
+
+function saveData(key, data) {
+  if (isAvailable) {
+    localStorage.setItem(key, JSON.stringify(data));
   }
 }
 
-function storeItem(item, value) {
-  if (isStorageAvailable) {
-    try {
-      const stringed = JSON.stringify(value);
-      localStorage.setItem(item, stringed);
-    } catch (e) {
-      console.error("Failed to save to localStorage:", e);
-    }
-  } else {
-    console.warn("localStorage is not available");
+function loadData(key) {
+  if (isAvailable) {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : null;
   }
+  return null;
 }
 
-// Load tasks when this module is imported
-loadTasks();
-
-export { storeItem, isStorageAvailable };
+export { saveData, loadData, isAvailable };

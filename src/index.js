@@ -1,2 +1,12 @@
 import "./styles.css";
-import { Task, Category } from "./task.js";
+import { TodoList } from "./task";
+import DOM from "./dom";
+
+// Initialize App
+document.addEventListener("DOMContentLoaded", () => {
+  // Load Data
+  TodoList.init();
+
+  // Initialize DOM
+  DOM.init();
+});

@@ -155,5 +155,224 @@
         </main>
       </div>
     </div>
+    <div class="modal-overlay" id="modal-add-task">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Add New Task</h2>
+          <button class="close-modal" id="close-add-task">
+            <span class="material-icons-outlined">close</span>
+          </button>
+        </div>
+        <form id="add-task-form">
+          <div class="form-group">
+            <label for="task-title">Title</label>
+            <input
+              type="text"
+              id="task-title"
+              name="title"
+              placeholder="e.g., Buy groceries"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="task-desc">Description</label>
+            <textarea
+              id="task-desc"
+              name="description"
+              rows="3"
+              placeholder="Add more details..."
+            ></textarea>
+          </div>
+
+          <div
+            class="form-group"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
+          >
+            <div>
+              <label for="task-date">Due Date</label>
+              <input type="date" id="task-date" name="date" required />
+            </div>
+            <div>
+              <label for="task-priority">Priority</label>
+              <select id="task-priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="task-category">Category</label>
+            <select id="task-category" name="category">
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-cancel" id="cancel-add-task">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Create Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-task-detail">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Task Details</h2>
+          <button class="close-modal" id="close-task-detail">
+            <span class="material-icons-outlined">close</span>
+          </button>
+        </div>
+        <div class="modal-content">
+          <h3 class="task-detail-title">Finish UI Design Plan</h3>
+
+          <div
+            class="task-detail-meta"
+            style="
+              margin-top: 1rem;
+              color: var(--text-muted);
+              display: flex;
+              gap: 1rem;
+              align-items: center;
+            "
+          >
+            <span style="display: flex; align-items: center; gap: 0.5rem">
+              <span class="material-icons-outlined">calendar_today</span> Feb
+              15, 2026
+            </span>
+            <span class="badge high">High Priority</span>
+          </div>
+
+          <p
+            class="task-description"
+            style="
+              margin-top: 1.5rem;
+              line-height: 1.6;
+              color: var(--text-main);
+            "
+          >
+            Create wireframes and high-fidelity mockups for the new dashboard.
+            Ensure to follow the material design guidelines and include dark
+            mode variants.
+          </p>
+
+          <div class="task-category" style="margin-top: 1.5rem">
+            <span style="font-weight: 600; color: var(--text-muted)"
+              >Category:</span
+            >
+            <span style="color: var(--primary); font-weight: 600">Work</span>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn-secondary" style="width: auto">Delete</button>
+            <button class="btn-primary">Edit Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-new-category">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>New Category</h2>
+          <button class="close-modal" id="close-new-category">
+            <span class="material-icons-outlined">close</span>
+          </button>
+        </div>
+        <form id="new-category-form">
+          <div class="form-group">
+            <label for="category-name">Category Name</label>
+            <input
+              type="text"
+              id="category-name"
+              name="name"
+              placeholder="e.g., Home Projects"
+              required
+            />
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-cancel" id="cancel-new-category">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Add Category</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-edit-task">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Edit Task</h2>
+          <button class="close-modal" id="close-edit-task">
+            <span class="material-icons-outlined">close</span>
+          </button>
+        </div>
+        <form id="edit-task-form">
+          <div class="form-group">
+            <label for="edit-task-title">Title</label>
+            <input
+              type="text"
+              id="edit-task-title"
+              name="title"
+              value="Finish UI Design Plan"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="edit-task-desc">Description</label>
+            <textarea id="edit-task-desc" name="description" rows="3">
+Create wireframes and high-fidelity mockups for the new dashboard.</textarea
+            >
+          </div>
+
+          <div
+            class="form-group"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
+          >
+            <div>
+              <label for="edit-task-date">Due Date</label>
+              <input
+                type="date"
+                id="edit-task-date"
+                name="date"
+                value="2026-02-15"
+                required
+              />
+            </div>
+            <div>
+              <label for="edit-task-priority">Priority</label>
+              <select id="edit-task-priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high" selected>High</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-task-category">Category</label>
+            <select id="edit-task-category" name="category">
+              <option value="work" selected>Work</option>
+              <option value="personal">Personal</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-cancel" id="cancel-edit-task">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

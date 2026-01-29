@@ -1,20 +1,19 @@
 :root {
-  /* Color Palette - Premium & Modern */
-  --primary: #0f766e; /* Teal 700 */
-  --primary-hover: #115e59; /* Teal 800 */
-  --primary-light: #ccfbf1; /* Teal 100 */
+  --primary: #0f766e;
+  --primary-hover: #115e59;
+  --primary-light: #ccfbf1;
 
-  --secondary: #6366f1; /* Indigo 500 */
+  --secondary: #6366f1;
 
-  --bg-body: #f3f4f6; /* Cool Gray 100 */
+  --bg-body: #f3f4f6;
   --bg-surface: #ffffff;
   --bg-sidebar: #ffffff;
 
-  --text-main: #111827; /* Gray 900 */
-  --text-muted: #6b7280; /* Gray 500 */
-  --text-light: #9ca3af; /* Gray 400 */
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
 
-  --border-color: #e5e7eb; /* Gray 200 */
+  --border-color: #e5e7eb;
 
   --danger: #ef4444;
   --warning: #f59e0b;
@@ -45,7 +44,7 @@ body {
   background-color: var(--bg-body);
   color: var(--text-main);
   height: 100vh;
-  overflow: hidden; /* App-like feel */
+  overflow: hidden;
 }
 
 /* Layout */
@@ -56,7 +55,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 280px; /* Fixed width */
+  width: 280px;
   background-color: var(--bg-sidebar);
   border-right: 1px solid var(--border-color);
   display: flex;
@@ -110,6 +109,46 @@ body {
   margin-top: auto;
 }
 
+/* Sidebar Item Actions */
+.nav-item {
+  position: relative;
+  justify-content: space-between;
+}
+
+.nav-item .nav-text {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.nav-item .nav-actions {
+  display: none;
+  gap: 5px;
+  align-items: center;
+}
+
+.nav-item:hover .nav-actions {
+  display: flex;
+}
+
+.nav-actions span {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.nav-actions span:hover {
+  background-color: #e5e7eb;
+  color: var(--text-main);
+}
+
+.nav-actions .delete-cat:hover {
+  color: var(--danger);
+  background-color: #fee2e2;
+}
+
 /* Buttons */
 button {
   cursor: pointer;
@@ -155,6 +194,7 @@ button {
   background-color: #e5e7eb;
   color: #374151;
 }
+
 .btn-cancel:hover {
   background-color: #d1d5db;
 }
@@ -384,8 +424,8 @@ main {
   margin-top: 2rem;
 }
 
-/* Modal Styling (Base for the separate files) */
-.modal-overlay {
+/* Modal Styling (Base for the separate modals) */
+.modal-overlay.active {
   position: fixed;
   top: 0;
   left: 0;
@@ -397,9 +437,12 @@ main {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  opacity: 1; /* Normally 0 and hidden */
-  /* pointer-events: none; */
+  opacity: 1;
   transition: opacity 0.3s;
+}
+
+.modal-overlay {
+  display: none;
 }
 
 .modal {
@@ -409,7 +452,7 @@ main {
   width: 100%;
   max-width: 500px;
   box-shadow: var(--shadow-lg);
-  transform: translateY(0); /* translateY(20px) when hidden */
+  transform: translateY(0);
   transition: transform 0.3s;
   position: relative;
 }
