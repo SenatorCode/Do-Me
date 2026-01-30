@@ -2,33 +2,25 @@
   --primary: #0f766e;
   --primary-hover: #115e59;
   --primary-light: #ccfbf1;
-
   --secondary: #6366f1;
-
   --bg-body: #f3f4f6;
   --bg-surface: #ffffff;
   --bg-sidebar: #ffffff;
-
   --text-main: #111827;
   --text-muted: #6b7280;
   --text-light: #9ca3af;
-
   --border-color: #e5e7eb;
-
   --danger: #ef4444;
   --warning: #f59e0b;
   --success: #10b981;
-
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md:
     0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg:
     0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-full: 9999px;
-
   --font-family: "Funnel Display", system-ui, -apple-system, sans-serif;
 }
 
@@ -62,6 +54,9 @@ body {
   flex-direction: column;
   padding: 1.5rem;
   flex-shrink: 0;
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease;
 }
 
 .sidebar .brand h1 {
@@ -103,6 +98,7 @@ body {
 
 .nav-item .material-icons-outlined {
   font-size: 1.25rem;
+  flex-shrink: 0;
 }
 
 .sidebar-footer {
@@ -214,6 +210,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .header-title {
@@ -315,6 +313,7 @@ main {
   gap: 1rem;
   font-size: 0.875rem;
   color: var(--text-muted);
+  flex-wrap: wrap;
 }
 
 .task-meta .date {
@@ -386,6 +385,12 @@ main {
   margin-bottom: 1.25rem;
 }
 
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
@@ -422,9 +427,10 @@ main {
   justify-content: flex-end;
   gap: 1rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Modal Styling (Base for the separate modals) */
+/* Modal Styling */
 .modal-overlay.active {
   position: fixed;
   top: 0;
@@ -455,6 +461,7 @@ main {
   transform: translateY(0);
   transition: transform 0.3s;
   position: relative;
+  margin: 1rem;
 }
 
 .modal-header {
@@ -474,8 +481,432 @@ main {
   border: none;
   cursor: pointer;
   color: var(--text-muted);
+  padding: 0;
+  min-width: auto;
 }
 
 .close-modal:hover {
   color: var(--text-main);
+}
+
+/* Task Detail Modal */
+.task-detail-meta {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.task-detail-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-detail-meta .material-icons-outlined {
+  font-size: 1.2rem;
+}
+
+.task-description {
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.task-category {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.task-category span:first-child {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.task-category span:last-child {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Footer */
+.app-footer {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-content > p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.footer-links a i {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links .github-text,
+.footer-links .repo-text {
+  display: inline;
+}
+
+/* Responsive Design */
+
+/* Tablet - 768px and below */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .sidebar .brand {
+    flex-shrink: 0;
+  }
+
+  .sidebar .brand h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 0.25rem;
+    flex: 1;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-item span:last-child {
+    display: none;
+  }
+
+  .sidebar-footer {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .btn-secondary {
+    width: auto;
+    padding: 0.5rem 1rem;
+  }
+
+  header {
+    padding: 1rem;
+    justify-content: space-between;
+  }
+
+  .header-title h2 {
+    font-size: 1.25rem;
+  }
+
+  .btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .greeting h3 {
+    font-size: 1.25rem;
+  }
+
+  .task-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .task-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .card-actions {
+    position: static;
+    opacity: 1;
+    background: transparent;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+
+  .modal {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .footer-content > p {
+    margin: 0;
+  }
+
+  .footer-links {
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .app-footer {
+    padding: 1rem;
+  }
+}
+
+/* Mobile - 480px and below */
+@media (max-width: 480px) {
+  .sidebar {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .sidebar .brand h1 {
+    font-size: 1.25rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .nav-item .material-icons-outlined {
+    font-size: 1rem;
+  }
+
+  .btn-secondary {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  header {
+    padding: 0.75rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .header-title {
+    gap: 0.5rem;
+  }
+
+  .header-title h2 {
+    font-size: 1rem;
+  }
+
+  .header-title .material-icons-outlined {
+    font-size: 1.25rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 0.75rem;
+  }
+
+  .dashboard-overview {
+    margin-bottom: 1rem;
+  }
+
+  .greeting h3 {
+    font-size: 1rem;
+  }
+
+  .greeting p {
+    font-size: 0.85rem;
+  }
+
+  .task-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .task-card {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .task-title {
+    font-size: 1rem;
+  }
+
+  .task-meta {
+    font-size: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .card-status .check-icon {
+    font-size: 1.25rem;
+  }
+
+  .modal {
+    max-width: 95%;
+    padding: 1.25rem;
+    margin: 0.5rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 16px;
+  }
+
+  .modal-actions {
+    gap: 0.5rem;
+  }
+
+  .modal-actions button {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-content > p {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+
+  .footer-links a i {
+    font-size: 1.1rem;
+  }
+
+  .github-text,
+  .repo-text {
+    display: none;
+  }
+
+  .app-footer {
+    padding: 0.75rem;
+  }
+}
+
+/* Extra small devices - 320px */
+@media (max-width: 320px) {
+  .sidebar .brand h1 {
+    font-size: 1rem;
+  }
+
+  .nav-item {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-item .material-icons-outlined {
+    font-size: 0.9rem;
+  }
+
+  .header-title h2 {
+    font-size: 0.9rem;
+  }
+
+  .greeting h3 {
+    font-size: 0.95rem;
+  }
+
+  .task-title {
+    font-size: 0.95rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    gap: 0.75rem;
+  }
 }

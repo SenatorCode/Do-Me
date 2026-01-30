@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Do Me</title>
+    <title>Do Me - Task Management</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -25,6 +25,10 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
 
@@ -153,8 +157,36 @@
             </div>
           </div>
         </main>
+
+        <footer class="app-footer">
+          <div class="footer-content">
+            <p>&copy; 2026 Do Me. All rights reserved.</p>
+            <div class="footer-links">
+              <a
+                href="https://github.com/SenatorCode"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit GitHub Profile"
+              >
+                <i class="fab fa-github"></i>
+                <span class="github-text">SenatorCode</span>
+              </a>
+              <a
+                href="https://github.com/SenatorCode/Do-Me"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View Repository"
+              >
+                <i class="fab fa-github"></i>
+                <span class="repo-text">Do-Me Repo</span>
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
+
+    <!-- Modals -->
     <div class="modal-overlay" id="modal-add-task">
       <div class="modal">
         <div class="modal-header">
@@ -185,10 +217,7 @@
             ></textarea>
           </div>
 
-          <div
-            class="form-group"
-            style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
-          >
+          <div class="form-group form-row">
             <div>
               <label for="task-date">Due Date</label>
               <input type="date" id="task-date" name="date" required />
@@ -221,6 +250,7 @@
         </form>
       </div>
     </div>
+
     <div class="modal-overlay" id="modal-task-detail">
       <div class="modal">
         <div class="modal-header">
@@ -232,50 +262,33 @@
         <div class="modal-content">
           <h3 class="task-detail-title">Finish UI Design Plan</h3>
 
-          <div
-            class="task-detail-meta"
-            style="
-              margin-top: 1rem;
-              color: var(--text-muted);
-              display: flex;
-              gap: 1rem;
-              align-items: center;
-            "
-          >
-            <span style="display: flex; align-items: center; gap: 0.5rem">
+          <div class="task-detail-meta">
+            <span>
               <span class="material-icons-outlined">calendar_today</span> Feb
               15, 2026
             </span>
             <span class="badge high">High Priority</span>
           </div>
 
-          <p
-            class="task-description"
-            style="
-              margin-top: 1.5rem;
-              line-height: 1.6;
-              color: var(--text-main);
-            "
-          >
+          <p class="task-description">
             Create wireframes and high-fidelity mockups for the new dashboard.
             Ensure to follow the material design guidelines and include dark
             mode variants.
           </p>
 
-          <div class="task-category" style="margin-top: 1.5rem">
-            <span style="font-weight: 600; color: var(--text-muted)"
-              >Category:</span
-            >
-            <span style="color: var(--primary); font-weight: 600">Work</span>
+          <div class="task-category">
+            <span>Category:</span>
+            <span>Work</span>
           </div>
 
           <div class="modal-actions">
-            <button class="btn-secondary" style="width: auto">Delete</button>
+            <button class="btn-secondary">Delete</button>
             <button class="btn-primary">Edit Task</button>
           </div>
         </div>
       </div>
     </div>
+
     <div class="modal-overlay" id="modal-new-category">
       <div class="modal">
         <div class="modal-header">
@@ -305,6 +318,7 @@
         </form>
       </div>
     </div>
+
     <div class="modal-overlay" id="modal-edit-task">
       <div class="modal">
         <div class="modal-header">
@@ -332,10 +346,7 @@ Create wireframes and high-fidelity mockups for the new dashboard.</textarea
             >
           </div>
 
-          <div
-            class="form-group"
-            style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
-          >
+          <div class="form-group form-row">
             <div>
               <label for="edit-task-date">Due Date</label>
               <input
